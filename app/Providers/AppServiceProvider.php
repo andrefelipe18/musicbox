@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\User;
 use App\Music\Contracts\MusicCatalogProvider;
 use App\Music\YouTubeMusic\YouTubeMusicProvider;
 use Carbon\CarbonImmutable;
@@ -11,6 +10,7 @@ use Filament\View\PanelsRenderHook;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->configureDefaults();
-        Gate::define('viewApiDocs', fn (?User $user = null): bool => true);
+        Gate::define('viewApiDocs', fn (): bool => Auth::guard('admin')->check());
         RateLimiter::for('auth', function (Request $request): Limit {
             $email = $request->input('email');
             $identity = is_string($email) ? Str::lower($email) : 'invalid-email';

@@ -6,3 +6,345 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+.musicbox-landing {
+    color-scheme: dark;
+    background: #08070c;
+    color: #ece9f5;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+.musicbox-landing .landing-shell {
+    width: min(100% - 6rem, 1240px);
+    margin-inline: auto;
+}
+
+.musicbox-landing a {
+    text-decoration: none;
+}
+
+.musicbox-landing a:focus-visible {
+    outline: 2px solid #c4b5fd;
+    outline-offset: 6px;
+    border-radius: 8px;
+}
+
+.musicbox-landing .skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    padding: 12px 20px;
+    background: #7c3aed;
+    transform: translateY(-200%);
+}
+
+.musicbox-landing .skip-link:focus {
+    transform: translateY(0);
+}
+
+.musicbox-landing .landing-header {
+    display: flex;
+    min-height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid #2a2835;
+}
+
+.musicbox-landing .landing-brand img {
+    width: 160px;
+    height: auto;
+}
+
+.musicbox-landing .landing-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.musicbox-landing .nav-section {
+    color: #aaa5b8;
+    transition: color 160ms ease;
+}
+
+.musicbox-landing .nav-section:hover {
+    color: #ece9f5;
+}
+
+.musicbox-landing .landing-button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.musicbox-landing .landing-hero {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+    gap: 36px;
+    padding-block: 64px 72px;
+}
+
+.musicbox-landing .hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+}
+
+.musicbox-landing .landing-eyebrow {
+    color: #c4b5fd;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.musicbox-landing h1 {
+    font-size: clamp(44px, 5.7vw, 76px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+}
+
+.musicbox-landing h1 span {
+    color: #a78bfa;
+}
+
+.musicbox-landing .hero-description {
+    max-width: 365px;
+    color: #aaa5b8;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.musicbox-landing .landing-button {
+    display: inline-flex;
+    min-height: 52px;
+    align-items: center;
+    gap: 24px;
+    margin-top: 8px;
+    padding: 14px 22px;
+    border-radius: 8px;
+    background: #7c3aed;
+    color: #ece9f5;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background-color 160ms ease;
+}
+
+.musicbox-landing .landing-button:hover {
+    background: #6d28d9;
+}
+
+.musicbox-landing .hero-art {
+    min-width: 0;
+}
+
+.musicbox-landing .hero-art img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.musicbox-landing .hero-art figcaption {
+    margin-top: 16px;
+    color: #aaa5b8;
+    font-size: 13px;
+    text-align: center;
+}
+
+.musicbox-landing .landing-features {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    padding-block: 72px;
+    border-top: 1px solid #2a2835;
+    scroll-margin-top: 32px;
+}
+
+.musicbox-landing h2 {
+    font-size: clamp(30px, 3.4vw, 44px);
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+
+.musicbox-landing .section-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 28px;
+    color: #a78bfa;
+}
+
+.musicbox-landing .features-intro p {
+    max-width: 340px;
+    margin-top: 20px;
+    color: #aaa5b8;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.musicbox-landing .feature-list {
+    display: grid;
+    gap: 32px;
+}
+
+.musicbox-landing .feature-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    align-items: start;
+    gap: 20px;
+}
+
+.musicbox-landing .feature-item > svg {
+    width: 28px;
+    height: 28px;
+    color: #a78bfa;
+}
+
+.musicbox-landing h3 {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+}
+
+.musicbox-landing .feature-item p,
+.musicbox-landing .workflow-list p {
+    margin-top: 8px;
+    color: #aaa5b8;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.musicbox-landing .landing-workflow {
+    padding: 48px;
+    border: 1px solid #2a2835;
+    border-radius: 16px;
+    background: #0e0d13;
+    scroll-margin-top: 32px;
+}
+
+.musicbox-landing .landing-workflow > p {
+    margin-top: 16px;
+    color: #aaa5b8;
+    line-height: 1.7;
+}
+
+.musicbox-landing .workflow-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 36px;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid #2a2835;
+    list-style: none;
+}
+
+.musicbox-landing .workflow-list svg {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 16px;
+    color: #a78bfa;
+}
+
+.musicbox-landing .landing-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding-block: 40px;
+    margin-top: 48px;
+    border-top: 1px solid #2a2835;
+    color: #aaa5b8;
+    font-size: 13px;
+}
+
+.musicbox-landing .landing-footer img {
+    width: 120px;
+    height: auto;
+}
+
+@media (max-width: 767px) {
+    .musicbox-landing .landing-shell {
+        width: calc(100% - 40px);
+    }
+
+    .musicbox-landing .landing-header {
+        min-height: 80px;
+        gap: 12px;
+    }
+
+    .musicbox-landing .landing-brand img {
+        width: 128px;
+    }
+
+    .musicbox-landing .landing-nav {
+        display: none;
+    }
+
+    .musicbox-landing .landing-hero,
+    .musicbox-landing .landing-features {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+        padding-block: 48px;
+    }
+
+    .musicbox-landing .hero-copy {
+        gap: 24px;
+    }
+
+    .musicbox-landing .hero-art {
+        width: min(100%, 440px);
+        justify-self: center;
+    }
+
+    .musicbox-landing .landing-workflow {
+        padding: 28px 24px;
+    }
+
+    .musicbox-landing .workflow-list {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        margin-top: 28px;
+        padding-top: 28px;
+    }
+
+    .musicbox-landing .workflow-list li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        column-gap: 16px;
+    }
+
+    .musicbox-landing .workflow-list svg {
+        grid-row: span 2;
+        margin: 0;
+    }
+
+    .musicbox-landing .workflow-list p {
+        grid-column: 2;
+    }
+
+    .musicbox-landing .landing-footer {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding-block: 32px;
+        margin-top: 40px;
+    }
+
+    .musicbox-landing .landing-footer p {
+        width: 100%;
+        order: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .musicbox-landing *,
+    .musicbox-landing *::before,
+    .musicbox-landing *::after {
+        transition: none;
+    }
+}

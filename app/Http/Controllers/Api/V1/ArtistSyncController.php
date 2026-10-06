@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\V1\ArtistSyncRequest;
 use App\Models\Artist;
 use App\Services\Music\ArtistCatalogService;
+use Dedoc\Scramble\Attributes\Group;
 use Illuminate\Http\JsonResponse;
 
+#[Group('Artist')]
 class ArtistSyncController extends Controller
 {
     public function __invoke(ArtistSyncRequest $request, Artist $artist): JsonResponse

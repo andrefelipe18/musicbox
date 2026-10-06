@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\RequireAdminSession;
 use App\Http\Middleware\RequireStatefulSession;
 use App\Music\Exceptions\MusicProviderException;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -24,7 +25,10 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->statefulApi();
-        $middleware->alias(['stateful-session' => RequireStatefulSession::class]);
+        $middleware->alias([
+            'stateful-session' => RequireStatefulSession::class,
+            'admin-session' => RequireAdminSession::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

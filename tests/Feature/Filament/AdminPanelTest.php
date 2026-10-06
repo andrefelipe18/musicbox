@@ -3,7 +3,9 @@
 use App\Filament\AvatarProviders\BlobatarProvider;
 use App\Models\Admin;
 use App\Models\User;
+use Filament\Actions\View\ActionsIconAlias;
 use Filament\Facades\Filament;
+use Filament\Support\Facades\FilamentIcon;
 
 it('exposes the admin panel at /admin without a topbar', function (): void {
     $panel = Filament::getPanel('admin');
@@ -11,6 +13,13 @@ it('exposes the admin panel at /admin without a topbar', function (): void {
     expect($panel->getPath())->toBe('admin')
         ->and($panel->hasTopbar())->toBeFalse()
         ->and($panel->getColors()['primary'])->toBe('#7c3aed');
+});
+
+it('keeps the action group icon out of the duotone style', function (): void {
+    Filament::getPanel('admin')->boot();
+
+    expect(FilamentIcon::resolve(ActionsIconAlias::ACTION_GROUP))
+        ->toBe('phosphor-dots-three-vertical');
 });
 
 it('resolves user avatars from blobatar over http', function (): void {

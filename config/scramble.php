@@ -1,6 +1,5 @@
 <?php
 
-use Dedoc\Scramble\Http\Middleware\RestrictedDocsAccess;
 use Dedoc\Scramble\SecurityDocumentation\MiddlewareAuthSecurityStrategy;
 use Dedoc\Scramble\Support\Generator\SecurityScheme;
 use Illuminate\Support\Str;
@@ -60,7 +59,7 @@ This document describes the versioned `/api/v1` API. Artist and release route ID
 
 ### Session authentication and CSRF
 
-The API uses Sanctum session cookies for first-party clients, not bearer tokens. Authenticated operations require the session cookie shown by the `sessionCookie` security scheme. For browser clients, first request `GET /sanctum/csrf-cookie`, send cookies with credentials, URL-decode the `XSRF-TOKEN` cookie, and include it as `X-XSRF-TOKEN` on state-changing requests. Registration and login also use stateful session and CSRF middleware. Configure the SPA's exact origin in CORS and Sanctum stateful domains. Documentation and its OpenAPI JSON are publicly readable; API endpoint authentication remains unchanged.
+The API uses Sanctum session cookies for first-party clients, not bearer tokens. Authenticated operations require the session cookie shown by the `sessionCookie` security scheme. For browser clients, first request `GET /sanctum/csrf-cookie`, send cookies with credentials, URL-decode the `XSRF-TOKEN` cookie, and include it as `X-XSRF-TOKEN` on state-changing requests. Registration and login also use stateful session and CSRF middleware. Configure the SPA's exact origin in CORS and Sanctum stateful domains. Documentation and its OpenAPI JSON are readable only by authenticated admins; API endpoint authentication remains unchanged.
 
 ### Catalog and personal release behavior
 
@@ -92,10 +91,12 @@ MARKDOWN,
          */
         'elements' => [
             'view' => 'scramble::docs',
-            'theme' => 'light',
+            // MusicBox console theme (DESIGN.md) is dark-only; see the token
+            // overrides in resources/views/vendor/scramble/docs.blade.php
+            'theme' => 'dark',
             'hideTryIt' => false,
             'hideSchemas' => false,
-            'logo' => '',
+            'logo' => '/musicbox-logo.png',
             'tryItCredentialsPolicy' => 'include',
             'layout' => 'responsive',
             'router' => 'hash',
@@ -169,7 +170,7 @@ MARKDOWN,
 
     'middleware' => [
         'web',
-        RestrictedDocsAccess::class,
+        'admin-session',
     ],
 
     'extensions' => [],

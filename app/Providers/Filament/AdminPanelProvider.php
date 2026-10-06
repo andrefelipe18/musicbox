@@ -4,20 +4,25 @@ namespace App\Providers\Filament;
 
 use App\Filament\Auth\Login;
 use App\Filament\AvatarProviders\BlobatarProvider;
+use App\Filament\Pages\Dashboard;
+use App\Filament\Widgets\PeriodStatsOverview;
+use App\Filament\Widgets\RatingsChart;
+use App\Filament\Widgets\UserGrowthChart;
+use Filafly\Icons\Phosphor\Enums\Phosphor;
 use Filafly\Icons\Phosphor\PhosphorIcons;
+use Filament\Actions\Action;
+use Filament\Actions\CreateAction;
+use Filament\Actions\View\ActionsIconAlias;
 use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Width;
 use Filament\View\PanelsRenderHook;
-use Filament\Widgets\AccountWidget;
-use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Contracts\View\View;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -25,6 +30,7 @@ use Illuminate\Foundation\Http\Middleware\PreventRequestForgery;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Leandrocfe\FilamentApexCharts\FilamentApexChartsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -43,6 +49,13 @@ class AdminPanelProvider extends PanelProvider
             ->authGuard('admin')
             ->login(Login::class)
             ->topbar(false)
+            ->userMenuItems([
+                Action::make('apiDocumentation')
+                    ->label(__('app.user_menu.api_documentation'))
+                    ->icon(Phosphor::BookOpen)
+                    ->url('/docs/api')
+                    ->openUrlInNewTab(),
+            ])
             ->colors([
                 'primary' => '#7c3aed',
                 'danger' => Color::Rose,
@@ -58,10 +71,12 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Dashboard::class,
             ])
+
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                PeriodStatsOverview::class,
+                UserGrowthChart::class,
+                RatingsChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -77,6 +92,13 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ])
-            ->plugin(PhosphorIcons::make()->duotone());
+            ->plugin(PhosphorIcons::make()
+                ->duotone()
+                ->overrideAlias(ActionsIconAlias::ACTION_GROUP, Phosphor::DotsThreeVertical),
+            )
+            ->plugin(FilamentApexChartsPlugin::make())
+            ->bootUsing(fn () => CreateAction::configureUsing(
+                fn (CreateAction $action) => $action->createAnother(false),
+            ));
     }
 }

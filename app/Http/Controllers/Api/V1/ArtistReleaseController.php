@@ -9,9 +9,11 @@ use App\Http\Resources\Api\V1\ReleaseResource;
 use App\Models\Artist;
 use App\Models\Release;
 use App\Services\Music\ArtistCatalogService;
+use Dedoc\Scramble\Attributes\Group;
 use Dedoc\Scramble\Attributes\Response as ApiResponse;
 use Illuminate\Http\JsonResponse;
 
+#[Group('Artist')]
 class ArtistReleaseController extends Controller
 {
     #[ApiResponse(status: 200, type: 'array{data: array{artist: ArtistResource, releases: list<ReleaseResource>}, links: array{first: string|null, last: string|null, prev: string|null, next: string|null}, meta: array{current_page: int, from: int|null, last_page: int, links: list<array{url: string|null, label: string, active: bool}>, path: string, per_page: int, to: int|null, total: int, sync: array{stale: bool, pending: bool}}}')]
