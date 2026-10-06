@@ -1,6 +1,6 @@
 {
-    "name": "base_clean_arch_bloc",
-    "short_name": "base_clean_arch_bloc",
+    "name": "musicbox",
+    "short_name": "musicbox",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

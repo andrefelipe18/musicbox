@@ -60,7 +60,7 @@ void run(HookContext context) {
     entityName = context.vars['feature_name'] as String;
   }
 
-  var packageName = 'base_clean_arch_bloc';
+  var packageName = 'musicbox';
   final pubspecFile = File('pubspec.yaml');
   if (pubspecFile.existsSync()) {
     final doc = yaml.loadYaml(pubspecFile.readAsStringSync());

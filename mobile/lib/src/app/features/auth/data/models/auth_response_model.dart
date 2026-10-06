@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/models/user_model.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/data/models/user_model.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
 
 class AuthResponseModel extends AuthResponseEntity {
   const AuthResponseModel({required super.user, required super.token});

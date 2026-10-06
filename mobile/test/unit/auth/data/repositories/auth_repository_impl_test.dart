@@ -1,12 +1,12 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/repositories/auth_repository_impl.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_exception.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_request.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_response.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/default_exception.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/unauthorized_exception.dart';
+import 'package:musicbox/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
+import 'package:musicbox/src/app/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/core/client_http/rest_client_exception.dart';
+import 'package:musicbox/src/core/client_http/rest_client_request.dart';
+import 'package:musicbox/src/core/client_http/rest_client_response.dart';
+import 'package:musicbox/src/core/errors/default_exception.dart';
+import 'package:musicbox/src/core/errors/unauthorized_exception.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

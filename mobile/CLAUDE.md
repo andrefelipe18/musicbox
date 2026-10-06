@@ -1,6 +1,6 @@
-# base_clean_arch_bloc
+# Musicbox Mobile
 
-Flutter template implementing Clean Architecture (Robert C. Martin) with BLoC for state management. It exists to be cloned/copied as a starting point for new apps, not to grow into a product itself - the `auth` feature is the reference implementation every new feature should imitate.
+App Flutter do Musicbox (`mobile/` do monorepo) com Clean Architecture (Robert C. Martin) e BLoC para gerenciamento de estado. Consome a API do `../backend` (`/api/v1`). A feature `auth` é a implementação de referência que toda feature nova deve imitar.
 
 Detailed conventions live in `.claude/rules/` and are loaded automatically. The `new-feature` skill (`.claude/skills/new-feature/`) scaffolds a complete feature end-to-end - prefer it over writing a feature by hand. It runs on top of the `bricks/feature/` Mason brick (`mason get` once, then `mason make feature`), which generates the boilerplate directly - see the skill for the full command and what to do beyond it (DI wiring, a second action, etc).
 
@@ -41,7 +41,7 @@ flutter test test/unit/auth/domain/usecases/login_usecase_test.dart   # single t
 flutter run
 ```
 
-CI/CD is documented in `.github/README_CICD.md`. Tests run on every push/PR; build+release+deploy only run on `v*.*.*` tags.
+CI: `.github/workflows/mobile-tests.yaml` (na raiz do monorepo) roda `flutter test` em push/PR que alterem `mobile/`. Ainda não há build nem deploy.
 
 The app is wired up for [Marionette MCP](https://github.com/leancodepl/marionette_mcp) (`MarionetteBinding` in `lib/main.dart`, debug-only) - after `flutter run`, an agent can connect to the printed `ws://` VM service URI and drive the running app (tap, enter text, screenshot, `get_logs`) to verify a UI change actually works, instead of only relying on `flutter analyze`/`flutter test`.
 

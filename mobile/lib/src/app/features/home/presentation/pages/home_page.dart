@@ -1,6 +1,6 @@
-import 'package:base_clean_arch_bloc/routes.dart';
-import 'package:base_clean_arch_bloc/src/core/DI/dependency_injector.dart';
-import 'package:base_clean_arch_bloc/src/core/services/session_service.dart';
+import 'package:musicbox/routes.dart';
+import 'package:musicbox/src/core/DI/dependency_injector.dart';
+import 'package:musicbox/src/core/services/session_service.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

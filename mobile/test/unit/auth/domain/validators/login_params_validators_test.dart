@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/validators/login_params_validators.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/validators/login_params_validators.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
 
 void main() {
   group('LoginParamsValidators', () {

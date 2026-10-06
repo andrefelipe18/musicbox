@@ -1,5 +1,5 @@
-import 'package:base_clean_arch_bloc/src/core/client_http/client_http.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/errors.dart';
+import 'package:musicbox/src/core/client_http/client_http.dart';
+import 'package:musicbox/src/core/errors/errors.dart';
 
 class RestClientException extends BaseException implements RestClientHttpMessage {
   dynamic error;

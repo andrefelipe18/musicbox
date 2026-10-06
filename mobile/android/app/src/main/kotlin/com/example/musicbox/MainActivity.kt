@@ -1,4 +1,4 @@
-package com.example.base_clean_arch_bloc
+package com.example.musicbox
 
 import io.flutter.embedding.android.FlutterActivity
 

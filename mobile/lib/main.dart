@@ -1,5 +1,5 @@
-import 'package:base_clean_arch_bloc/app_widget.dart';
-import 'package:base_clean_arch_bloc/src/core/DI/dependency_injector.dart';
+import 'package:musicbox/app_widget.dart';
+import 'package:musicbox/src/core/DI/dependency_injector.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

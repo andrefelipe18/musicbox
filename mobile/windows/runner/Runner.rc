@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "base_clean_arch_bloc" "\0"
+            VALUE "FileDescription", "musicbox" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "base_clean_arch_bloc" "\0"
+            VALUE "InternalName", "musicbox" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "base_clean_arch_bloc.exe" "\0"
-            VALUE "ProductName", "base_clean_arch_bloc" "\0"
+            VALUE "OriginalFilename", "musicbox.exe" "\0"
+            VALUE "ProductName", "musicbox" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

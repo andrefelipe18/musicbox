@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:base_clean_arch_bloc/src/core/cache/cache.dart';
+import 'package:musicbox/src/core/cache/cache.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesImpl implements ICache {

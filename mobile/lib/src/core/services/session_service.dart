@@ -1,5 +1,5 @@
-import 'package:base_clean_arch_bloc/src/core/cache/cache.dart';
-import 'package:base_clean_arch_bloc/src/core/cache/shared_preferences/shared_preferences_impl.dart';
+import 'package:musicbox/src/core/cache/cache.dart';
+import 'package:musicbox/src/core/cache/shared_preferences/shared_preferences_impl.dart';
 
 class SessionService {
   final SharedPreferencesImpl _sharedPreferencesImpl;

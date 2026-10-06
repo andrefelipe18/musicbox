@@ -1,11 +1,11 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/models/auth_response_model.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/repositories/auth_repository_interface.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/client_http.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/errors.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/unauthorized_exception.dart';
+import 'package:musicbox/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
+import 'package:musicbox/src/app/features/auth/data/models/auth_response_model.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/repositories/auth_repository_interface.dart';
+import 'package:musicbox/src/core/client_http/client_http.dart';
+import 'package:musicbox/src/core/errors/errors.dart';
+import 'package:musicbox/src/core/errors/unauthorized_exception.dart';
 import 'package:result_dart/result_dart.dart';
 
 class AuthRepositoryImpl implements IAuthRepository {

@@ -1,10 +1,10 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_exception.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_interface.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_request.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_response.dart';
-import 'package:base_clean_arch_bloc/src/core/utils/endpoints.dart';
+import 'package:musicbox/src/app/features/auth/data/datasources/auth_remote_datasource.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/core/client_http/rest_client_exception.dart';
+import 'package:musicbox/src/core/client_http/rest_client_interface.dart';
+import 'package:musicbox/src/core/client_http/rest_client_request.dart';
+import 'package:musicbox/src/core/client_http/rest_client_response.dart';
+import 'package:musicbox/src/core/utils/endpoints.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,9 +1,9 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/user_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/validators/login_params_validators.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/default_exception.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/user_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/validators/login_params_validators.dart';
+import 'package:musicbox/src/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:musicbox/src/core/errors/default_exception.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';

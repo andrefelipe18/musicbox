@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/user_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/user_entity.dart';
 
 class UserModel extends UserEntity {
   const UserModel({required super.id, required super.email, required super.name});

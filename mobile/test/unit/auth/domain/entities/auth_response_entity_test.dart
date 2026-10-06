@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/user_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/user_entity.dart';
 
 void main() {
   group('AuthResponseEntity', () {

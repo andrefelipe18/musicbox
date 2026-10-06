@@ -1,4 +1,4 @@
-import 'package:base_clean_arch_bloc/src/core/cache/cache_params.dart';
+import 'package:musicbox/src/core/cache/cache_params.dart';
 
 abstract class ICache {
   Future<bool> setData({required CacheParams params});

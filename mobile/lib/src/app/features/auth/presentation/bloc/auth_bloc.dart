@@ -1,9 +1,9 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/usecases/login_usecase.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/validators/login_params_validators.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/errors.dart';
-import 'package:base_clean_arch_bloc/src/core/extensions/lucid_validator_extensions.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:musicbox/src/app/features/auth/domain/validators/login_params_validators.dart';
+import 'package:musicbox/src/core/errors/errors.dart';
+import 'package:musicbox/src/core/extensions/lucid_validator_extensions.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:result_dart/result_dart.dart';

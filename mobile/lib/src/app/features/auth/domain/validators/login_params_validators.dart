@@ -1,5 +1,5 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/core/extensions/lucid_validator_extensions.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/core/extensions/lucid_validator_extensions.dart';
 import 'package:lucid_validation/lucid_validation.dart';
 
 class LoginParamsValidators extends LucidValidator<LoginParams> {

@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:base_clean_arch_bloc/src/core/client_http/client_http.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/dio/client_interceptor_dio_impl.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/dio/dio_adapter.dart';
-import 'package:base_clean_arch_bloc/src/core/client_http/rest_client_multipart.dart';
+import 'package:musicbox/src/core/client_http/client_http.dart';
+import 'package:musicbox/src/core/client_http/dio/client_interceptor_dio_impl.dart';
+import 'package:musicbox/src/core/client_http/dio/dio_adapter.dart';
+import 'package:musicbox/src/core/client_http/rest_client_multipart.dart';
 import 'package:dio/dio.dart';
 
 class DioFactory {

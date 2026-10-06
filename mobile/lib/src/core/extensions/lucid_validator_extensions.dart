@@ -1,4 +1,4 @@
-import 'package:base_clean_arch_bloc/src/core/errors/credentials_validation_exception.dart';
+import 'package:musicbox/src/core/errors/credentials_validation_exception.dart';
 import 'package:lucid_validation/lucid_validation.dart';
 import 'package:result_dart/result_dart.dart';
 

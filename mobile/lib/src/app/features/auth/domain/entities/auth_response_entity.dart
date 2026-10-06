@@ -1,4 +1,4 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/user_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/user_entity.dart';
 import 'package:equatable/equatable.dart';
 
 class AuthResponseEntity extends Equatable {

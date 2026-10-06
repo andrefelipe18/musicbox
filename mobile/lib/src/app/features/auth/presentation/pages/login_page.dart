@@ -1,9 +1,9 @@
-import 'package:base_clean_arch_bloc/routes.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/validators/login_params_validators.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:base_clean_arch_bloc/src/core/DI/dependency_injector.dart';
-import 'package:base_clean_arch_bloc/src/core/utils/show_snack_bar.dart';
+import 'package:musicbox/routes.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/validators/login_params_validators.dart';
+import 'package:musicbox/src/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:musicbox/src/core/DI/dependency_injector.dart';
+import 'package:musicbox/src/core/utils/show_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

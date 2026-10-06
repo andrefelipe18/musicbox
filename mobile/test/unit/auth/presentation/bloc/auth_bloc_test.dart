@@ -2,14 +2,14 @@ import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:result_dart/result_dart.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/usecases/login_usecase.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/user_entity.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/default_exception.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/unauthorized_exception.dart';
-import 'package:base_clean_arch_bloc/src/core/errors/credentials_validation_exception.dart';
+import 'package:musicbox/src/app/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:musicbox/src/app/features/auth/domain/usecases/login_usecase.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/user_entity.dart';
+import 'package:musicbox/src/core/errors/default_exception.dart';
+import 'package:musicbox/src/core/errors/unauthorized_exception.dart';
+import 'package:musicbox/src/core/errors/credentials_validation_exception.dart';
 
 class MockLoginUsecase extends Mock implements LoginUsecase {}
 

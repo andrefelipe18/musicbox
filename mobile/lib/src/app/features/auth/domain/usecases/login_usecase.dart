@@ -1,8 +1,8 @@
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/dtos/login_params.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/entities/auth_response_entity.dart';
-import 'package:base_clean_arch_bloc/src/app/features/auth/domain/repositories/auth_repository_interface.dart';
-import 'package:base_clean_arch_bloc/src/core/interfaces/usecase_interface.dart';
-import 'package:base_clean_arch_bloc/src/core/services/session_service.dart';
+import 'package:musicbox/src/app/features/auth/domain/dtos/login_params.dart';
+import 'package:musicbox/src/app/features/auth/domain/entities/auth_response_entity.dart';
+import 'package:musicbox/src/app/features/auth/domain/repositories/auth_repository_interface.dart';
+import 'package:musicbox/src/core/interfaces/usecase_interface.dart';
+import 'package:musicbox/src/core/services/session_service.dart';
 import 'package:result_dart/result_dart.dart';
 
 class LoginUsecase implements UseCase<AuthResponseEntity, LoginParams> {
