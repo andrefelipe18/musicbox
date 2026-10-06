@@ -1,0 +1,22 @@
+.DS_Store
+
+# IDEs e agentes (por desenvolvedor)
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+/.agents
+/.amp
+/.claude
+/.cursor
+/.factory
+/.grok
+/.junie
+/.kiro
+/.pi
+/.mcp.json
+/.playwright-mcp
+
+# Specs e planos de trabalho locais
+/docs/superpowers
