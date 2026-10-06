@@ -42,3 +42,4 @@ yarn-error.log
 /opencode.jsonc
 /docs/superpowers/plans
 /docs/superpowers
+/.playwright-mcp

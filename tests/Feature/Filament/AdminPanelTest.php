@@ -4,14 +4,13 @@ use App\Filament\AvatarProviders\BlobatarProvider;
 use App\Models\Admin;
 use App\Models\User;
 use Filament\Facades\Filament;
-use Filament\Support\Colors\Color;
 
 it('exposes the admin panel at /admin without a topbar', function (): void {
     $panel = Filament::getPanel('admin');
 
     expect($panel->getPath())->toBe('admin')
         ->and($panel->hasTopbar())->toBeFalse()
-        ->and($panel->getColors())->toBe(['primary' => Color::Purple]);
+        ->and($panel->getColors()['primary'])->toBe('#7c3aed');
 });
 
 it('resolves user avatars from blobatar over http', function (): void {

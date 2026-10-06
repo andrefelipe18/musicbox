@@ -6,7 +6,10 @@ use App\Models\User;
 use App\Music\Contracts\MusicCatalogProvider;
 use App\Music\YouTubeMusic\YouTubeMusicProvider;
 use Carbon\CarbonImmutable;
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Cache\RateLimiting\Limit;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
@@ -31,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::BODY_END,
+            fn (): View => view('filament.hooks.sidebar-scrollbar'),
+        );
+
         $this->configureDefaults();
         Gate::define('viewApiDocs', fn (?User $user = null): bool => true);
         RateLimiter::for('auth', function (Request $request): Limit {

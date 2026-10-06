@@ -1,11 +1,11 @@
-# mc-back — Style Reference
+# MusicBox — Style Reference
 > Midnight catalog console — violet telemetry on layered charcoal, traced with cool-white borders.
 
 **Theme:** dark
 
 Source measurements are normalized; roles and recommendations are interpreted. Font summary lists are independent, not paired by position.
 
-mc-back is an internal catalog console for a music catalog: a near-black violet-tinted canvas, cool-white typography, and a single violet (violet-600 `#7c3aed`) that marks anything the operator can act on — the active nav item, the primary button, the running sync, the selected tab. The system is derived from the same editorial-scientific DNA as a marketing surface (monospaced micro-labels with wide tracking, single-weight display type, concentric charcoal surfaces, 1px hairline borders) but is re-tuned for density: an operator reads this panel for hours, so type is smaller, radii are tighter, and contrast does the work that oversized headlines did on a landing page. Surfaces layer as concentric violet-tinted charcoals (`#08070c` → `#0e0d13` → `#15141c` → `#1c1a25`) with no shadows anywhere. Violet-600 is the only filled color in the system; everything else is an outline, a hairline, or a text weight.
+MusicBox is an internal catalog console for a music catalog: a near-black violet-tinted canvas, cool-white typography, and a single violet (violet-600 `#7c3aed`) that marks anything the operator can act on — the active nav item, the primary button, the running sync, the selected tab. The system is derived from the same editorial-scientific DNA as a marketing surface (monospaced micro-labels with wide tracking, single-weight display type, concentric charcoal surfaces, 1px hairline borders) but is re-tuned for density: an operator reads this panel for hours, so type is smaller, radii are tighter, and contrast does the work that oversized headlines did on a landing page. Surfaces layer as concentric violet-tinted charcoals (`#08070c` → `#0e0d13` → `#15141c` → `#1c1a25`) with no shadows anywhere. Violet-600 is the only filled color in the system; everything else is an outline, a hairline, or a text weight.
 
 ## Tokens — Colors
 

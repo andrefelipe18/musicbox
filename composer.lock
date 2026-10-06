@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a3de3df2d44233ebf643cca895a69df8",
+    "content-hash": "848fc3542035dd365c830602ff012865",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -516,6 +516,77 @@
                 }
             ],
             "time": "2026-03-20T21:10:52+00:00"
+        },
+        {
+            "name": "codeat3/blade-phosphor-icons",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/codeat3/blade-phosphor-icons.git",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/codeat3/blade-phosphor-icons/zipball/39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "reference": "39a40c44908729d20f03f9903f4abcc165b1b02b",
+                "shasum": ""
+            },
+            "require": {
+                "blade-ui-kit/blade-icons": "^1.1",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0|^13.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "codeat3/blade-icon-generation-helpers": "^0.12",
+                "codeat3/phpcs-styles": "^1.0",
+                "orchestra/testbench": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^9.0|^10.5|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Codeat3\\BladePhosphorIcons\\BladePhosphorIconsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codeat3\\BladePhosphorIcons\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Swapnil Sarwe",
+                    "homepage": "https://swapnilsarwe.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "homepage": "https://driesvints.com"
+                }
+            ],
+            "description": "A package to easily make use of \"Phosphor Icons\" in your Laravel Blade views.",
+            "homepage": "https://github.com/codeat3/blade-phosphor-icons",
+            "keywords": [
+                "blade",
+                "laravel",
+                "phosphor-icons"
+            ],
+            "support": {
+                "issues": "https://github.com/codeat3/blade-phosphor-icons/issues",
+                "source": "https://github.com/codeat3/blade-phosphor-icons/tree/2.4.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/swapnilsarwe",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-21T13:21:02+00:00"
         },
         {
             "name": "composer/class-map-generator",
@@ -1218,6 +1289,122 @@
                 }
             ],
             "time": "2025-03-06T22:45:56+00:00"
+        },
+        {
+            "name": "filafly/filament-icons",
+            "version": "v2.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filafly/filament-icons.git",
+                "reference": "c1ced1bc0d0a03cd276ca2c3abf3abe2ca20b97d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filafly/filament-icons/zipball/c1ced1bc0d0a03cd276ca2c3abf3abe2ca20b97d",
+                "reference": "c1ced1bc0d0a03cd276ca2c3abf3abe2ca20b97d",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0 || ^5.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.20",
+                "phpunit/phpunit": "^11.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Filafly\\Icons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nolan Nordlund",
+                    "email": "nolan@filafly.com",
+                    "homepage": "https://www.filafly.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Core package for managing Filament icon drivers via a common interface.",
+            "homepage": "https://filafly.com/plugins/filament-icons",
+            "keywords": [
+                "Phosphor",
+                "carbon",
+                "filament",
+                "font awesome",
+                "iconoir",
+                "icons",
+                "laravel",
+                "replace",
+                "swap"
+            ],
+            "support": {
+                "issues": "https://github.com/filafly/filament-icons/issues",
+                "source": "https://github.com/filafly/filament-icons/tree/v2.2.1"
+            },
+            "time": "2026-04-06T18:46:37+00:00"
+        },
+        {
+            "name": "filafly/filament-phosphor-icons",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/filafly/filament-phosphor-icons.git",
+                "reference": "fef462488ded09352f29acae576378850d087886"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/filafly/filament-phosphor-icons/zipball/fef462488ded09352f29acae576378850d087886",
+                "reference": "fef462488ded09352f29acae576378850d087886",
+                "shasum": ""
+            },
+            "require": {
+                "codeat3/blade-phosphor-icons": "^2.3",
+                "filafly/filament-icons": "^2.0",
+                "filament/filament": "^4.0 || ^5.0",
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.22"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Filafly\\Icons\\Phosphor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nolan Nordlund",
+                    "email": "nolan@filafly.com",
+                    "homepage": "https://www.filafly.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Phosphor icon pack for Filament Icons",
+            "homepage": "https://filafly.com/plugins/filament-icons",
+            "keywords": [
+                "Phosphor",
+                "filament",
+                "icons",
+                "laravel",
+                "replace",
+                "swap"
+            ],
+            "support": {
+                "issues": "https://github.com/filafly/filament-phosphor-icons/issues",
+                "source": "https://github.com/filafly/filament-phosphor-icons/tree/v2.2.0"
+            },
+            "time": "2026-02-26T10:28:09+00:00"
         },
         {
             "name": "filament/actions",
@@ -9857,6 +10044,65 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2026-09-18T14:34:46+00:00"
+        },
+        {
+            "name": "lucascudo/laravel-pt-br-localization",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lucascudo/laravel-pt-BR-localization.git",
+                "reference": "5133b5c315a49cb0bbb2fc14cedf0031f003521e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lucascudo/laravel-pt-BR-localization/zipball/5133b5c315a49cb0bbb2fc14cedf0031f003521e",
+                "reference": "5133b5c315a49cb0bbb2fc14cedf0031f003521e",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lucascudo\\LaravelPtBrLocalization\\LaravelPtBrLocalizationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lucascudo\\LaravelPtBrLocalization\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Cascudo",
+                    "email": "lucas.sisau@gmail.com"
+                }
+            ],
+            "description": "Arquivos de linguagem em Português do Brasil (pt-BR) para Laravel",
+            "homepage": "https://github.com/lucascudo/laravel-pt-br-localization",
+            "support": {
+                "issues": "https://github.com/lucascudo/laravel-pt-BR-localization/issues",
+                "source": "https://github.com/lucascudo/laravel-pt-BR-localization/tree/v3.0.4"
+            },
+            "funding": [
+                {
+                    "url": "https://buymeacoffee.com/lucasrocha",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/lucascudo",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/lucascudo/laravel-pt-br-localization",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-03-06T11:03:14+00:00"
         },
         {
             "name": "mockery/mockery",

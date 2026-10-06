@@ -1,0 +1,285 @@
+.fi-main-ctn:has(.panel-decorations),
+.fi-simple-layout:has(.panel-decorations) {
+    position: relative;
+    isolation: isolate;
+}
+
+.panel-decorations {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+    color: var(--color-violet-400);
+    background:
+        linear-gradient(135deg, rgb(26 16 48 / 34%), transparent 58%),
+        radial-gradient(circle, rgb(167 139 250 / 12%) 1px, transparent 1.2px);
+    background-size: auto, 30px 30px;
+    background-position: center, 10px 10px;
+}
+
+.panel-decorations__contours {
+    position: absolute;
+    top: clamp(1rem, 8vh, 5rem);
+    right: clamp(-12rem, -7vw, -4rem);
+    width: min(68vw, 64rem);
+    min-width: 38rem;
+    opacity: 0.14;
+}
+
+.panel-decorations__orbit {
+    position: absolute;
+    width: clamp(5rem, 9vw, 8rem);
+    aspect-ratio: 1;
+    border: 1px dashed rgb(167 139 250 / 16%);
+    border-radius: 50%;
+}
+
+.panel-decorations__orbit--one {
+    top: 18%;
+    right: 20%;
+}
+
+.panel-decorations__orbit--two {
+    right: 10%;
+    bottom: 12%;
+    width: clamp(2.5rem, 5vw, 4rem);
+    opacity: 0.7;
+}
+
+.fi-main-ctn:has(.panel-decorations) > .fi-main,
+.fi-simple-layout:has(.panel-decorations) > .fi-simple-main-ctn,
+.fi-simple-layout:has(.panel-decorations) > .fi-simple-main {
+    position: relative;
+    z-index: 1;
+}
+
+.panel-login-layout {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    min-height: 100dvh;
+    place-items: center;
+    overflow: hidden;
+    padding: clamp(1rem, 4vw, 3.5rem);
+    background: linear-gradient(135deg, #1a1030 0%, var(--color-void) 58%);
+}
+
+.panel-login-card {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(100%, 1200px);
+    min-height: min(760px, calc(100dvh - 5rem));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    overflow: hidden;
+    border: 1px solid var(--color-linen);
+    border-radius: 24px;
+    background-color: var(--color-carbon);
+}
+
+.panel-login-main {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.panel-login-brand {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--color-ice);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.panel-login-brand__mark {
+    display: grid;
+    width: 2rem;
+    aspect-ratio: 1;
+    place-items: center;
+    border: 1px solid var(--color-steel);
+    border-radius: 8px;
+    color: var(--color-violet-400);
+    font-family: var(--font-mono);
+    font-size: 12px;
+}
+
+.panel-login-brand__divider {
+    width: 1px;
+    height: 1rem;
+    margin-inline: 0.15rem;
+    background-color: var(--color-steel);
+}
+
+.panel-login-brand__context,
+.panel-login-visual__label,
+.panel-login-visual__caption > span:first-child {
+    color: var(--color-fog);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+}
+
+.panel-login-form {
+    display: grid;
+    width: 100%;
+    max-width: 384px;
+    flex: 1;
+    align-content: center;
+    align-self: center;
+    margin-inline: auto;
+    padding-block: 3rem;
+}
+
+.panel-login-form .fi-simple-page-content > .fi-simple-header {
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.panel-login-form .fi-simple-page-content > .fi-simple-header :is(.fi-simple-header-heading, .fi-simple-header-subheading) {
+    text-align: center;
+}
+
+.panel-login-form .fi-simple-header-heading {
+    color: var(--color-ice);
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.panel-login-form .fi-simple-header-subheading,
+.panel-login-form .fi-fo-field-label,
+.panel-login-form .fi-link {
+    color: var(--color-fog);
+}
+
+.panel-login-form .fi-fo-field-label:has(.fi-checkbox-input),
+.panel-login-form .fi-link {
+    align-items: center;
+    white-space: nowrap;
+}
+
+.panel-login-form .fi-fo-field-label-ctn:has(.fi-checkbox-input) {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 12px;
+}
+
+.panel-login-form .fi-fo-field-label:has(.fi-checkbox-input) {
+    flex-shrink: 0;
+}
+
+.panel-login-form .fi-fo-field-label-ctn:has(.fi-checkbox-input) > .fi-sc {
+    margin-inline-start: auto;
+}
+
+.panel-login-form .fi-btn[type='submit'] {
+    border-color: var(--color-violet-600);
+    background-color: var(--color-violet-600);
+    color: var(--color-ice);
+}
+
+.panel-login-form .fi-input-wrp-suffix .fi-icon-btn {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    color: var(--color-fog);
+    cursor: pointer;
+}
+
+.panel-login-form .fi-input-wrp-suffix .fi-icon-btn:hover {
+    color: var(--color-violet-400);
+}
+
+.panel-login-form .fi-input-wrp-suffix .fi-icon-btn > .fi-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.panel-login-footer {
+    align-self: center;
+    color: var(--color-fog);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+}
+
+.panel-login-visual {
+    position: relative;
+    display: grid;
+    min-width: 0;
+    min-height: 560px;
+    overflow: hidden;
+    margin: 16px;
+    place-items: center;
+    border: 1px solid var(--color-iron);
+    border-radius: 16px;
+    background-color: var(--color-graphite);
+    color: var(--color-violet-400);
+}
+
+.panel-login-visual__label {
+    position: absolute;
+    z-index: 1;
+    top: 1.5rem;
+    left: 1.5rem;
+}
+
+.panel-login-visual > svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 125%;
+    max-width: none;
+    transform: translate(-50%, -50%);
+}
+
+.panel-login-visual__contours {
+    opacity: 0.32;
+    stroke-dasharray: 2 7;
+}
+
+.panel-login-visual__caption {
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 1px solid var(--color-steel);
+    padding-top: 1rem;
+    color: var(--color-ice);
+    font-size: 13px;
+}
+
+.panel-login-visual__caption > span:first-child {
+    color: var(--color-violet-400);
+}
+
+@media (max-width: 767px) {
+    .panel-login-layout {
+        padding: 0;
+    }
+
+    .panel-login-card {
+        width: 100%;
+        min-height: 100dvh;
+        grid-template-columns: minmax(0, 1fr);
+        border: 0;
+        border-radius: 0;
+    }
+
+    .panel-login-main {
+        min-height: 100dvh;
+        padding: 1.5rem;
+    }
+
+    .panel-login-visual {
+        display: none;
+    }
+}
