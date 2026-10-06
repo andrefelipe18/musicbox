@@ -2,10 +2,12 @@
 
 namespace App\Services\Music;
 
+use App\Models\Artist;
 use App\Models\Release;
 use App\Models\User;
 use App\Models\UserRelease;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\LengthAwarePaginator;
+use SortDirection;
 
 /**
  * Builds the filtered, sorted and paginated release listings served by the catalog endpoints.
@@ -13,7 +15,8 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 class ReleaseListService
 {
     /**
-     * @param array{artist_id?: string, type?: string, status?: string, rating?: int, sort?: string, direction?: string, per_page?: int} $filters
+     * @param  array{artist_id?: string, type?: string, status?: string, rating?: int, sort?: string, direction?: string, per_page?: int}  $filters
+     * @return LengthAwarePaginator<int, Release>
      */
     public function releases(array $filters, ?User $user): LengthAwarePaginator
     {
@@ -40,7 +43,7 @@ class ReleaseListService
         }
 
         $sort = $filters['sort'] ?? 'title';
-        $direction = $filters['direction'] ?? 'asc';
+        $direction = $this->direction($filters['direction'] ?? null);
         if (in_array($sort, ['rating', 'listened_at'], true)) {
             $query->orderBy(UserRelease::query()
                 ->select($sort)
@@ -57,7 +60,8 @@ class ReleaseListService
     }
 
     /**
-     * @param array{artist_id?: string, type?: string, status?: string, rating?: int, sort?: string, direction?: string, per_page?: int} $filters
+     * @param  array{artist_id?: string, type?: string, status?: string, rating?: int, sort?: string, direction?: string, per_page?: int}  $filters
+     * @return LengthAwarePaginator<int, UserRelease>
      */
     public function userReleases(User $user, array $filters): LengthAwarePaginator
     {
@@ -77,7 +81,7 @@ class ReleaseListService
         }
 
         $sort = $filters['sort'] ?? 'title';
-        $direction = $filters['direction'] ?? 'asc';
+        $direction = $this->direction($filters['direction'] ?? null);
         if (in_array($sort, ['title', 'release_year'], true)) {
             $query->join('releases', 'user_releases.release_id', '=', 'releases.id')
                 ->select('user_releases.*')
@@ -89,5 +93,28 @@ class ReleaseListService
         return $query->orderBy('user_releases.id')
             ->paginate($filters['per_page'] ?? 20)
             ->appends(collect($filters)->except('page')->all());
+    }
+
+    /**
+     * @param  array{type?: string, sort?: string, direction?: string, per_page?: int}  $filters
+     * @return LengthAwarePaginator<int, Release>
+     */
+    public function artistReleases(Artist $artist, array $filters): LengthAwarePaginator
+    {
+        $type = $filters['type'] ?? null;
+
+        return Release::query()
+            ->whereHas('artists', fn ($artists) => $artists->where('artists.id', $artist->id))
+            ->when($type !== null, fn ($query) => $query->where('type', $type))
+            ->with('artists')
+            ->orderBy($filters['sort'] ?? 'title', $this->direction($filters['direction'] ?? null))
+            ->orderBy('id')
+            ->paginate($filters['per_page'] ?? 20)
+            ->appends(collect($filters)->except('page')->all());
+    }
+
+    private function direction(?string $direction): SortDirection
+    {
+        return $direction === 'desc' ? SortDirection::Descending : SortDirection::Ascending;
     }
 }

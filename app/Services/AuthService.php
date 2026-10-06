@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Hash;
  */
 class AuthService
 {
-    /** @param array{name: string, email: string, password: string} $attributes */
+    /** @param array<string, mixed> $attributes */
     public function register(array $attributes, Request $request): User
     {
         $user = User::create($attributes);

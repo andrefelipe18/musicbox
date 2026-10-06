@@ -3,6 +3,7 @@
 namespace App\Filament\Widgets;
 
 use App\Filament\Widgets\Concerns\InteractsWithDashboardDateRange;
+use Illuminate\Contracts\View\View;
 use Leandrocfe\FilamentApexCharts\Widgets\ApexChartWidget;
 
 /**
@@ -14,10 +15,17 @@ abstract class ApexChart extends ApexChartWidget
 {
     use InteractsWithDashboardDateRange;
 
+    protected static bool $isLazy = false;
+
     /**
      * Polling is off on every dashboard widget.
      */
     protected ?string $pollingInterval = null;
+
+    public function render(): View
+    {
+        return view('filament.widgets.apex-chart');
+    }
 
     /**
      * The plugin computes `$options` once on mount, so a filter change would

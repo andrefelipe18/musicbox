@@ -45,6 +45,7 @@ class User extends Authenticatable
         ];
     }
 
+    /** @return HasMany<UserRelease, $this> */
     public function userReleases(): HasMany
     {
         return $this->hasMany(UserRelease::class);

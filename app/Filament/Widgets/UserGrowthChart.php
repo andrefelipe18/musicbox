@@ -50,6 +50,7 @@ class UserGrowthChart extends ApexChart
             'chart' => [
                 'type' => 'area',
                 'height' => 300,
+                'width' => '100%',
                 'toolbar' => ['show' => false],
                 'zoom' => ['enabled' => false],
             ],
@@ -60,7 +61,7 @@ class UserGrowthChart extends ApexChart
                 ],
             ],
             'xaxis' => [
-                'categories' => array_keys($this->daysInRange()),
+                'categories' => $this->dayLabels(),
                 'labels' => [
                     'style' => [
                         'fontFamily' => 'inherit',

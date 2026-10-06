@@ -9,10 +9,29 @@ use Illuminate\Database\ConcurrencyErrorDetector;
 use Illuminate\Database\DeadlockException;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 
 class UserCatalogService
 {
-    /** @param array{status: string, rating?: int|null, listened_at?: string|null, notes?: string|null} $attributes */
+    public function find(User $user, Release $release): UserRelease
+    {
+        $userRelease = $user->userReleases()
+            ->with(['release.artists'])
+            ->where('release_id', $release->id)
+            ->firstOrFail();
+        Gate::authorize('view', $userRelease);
+
+        return $userRelease;
+    }
+
+    public function remove(User $user, Release $release): void
+    {
+        $userRelease = $user->userReleases()->where('release_id', $release->id)->firstOrFail();
+        Gate::authorize('delete', $userRelease);
+        $userRelease->delete();
+    }
+
+    /** @param array<string, mixed> $attributes */
     public function replace(User $user, Release $release, array $attributes): UserRelease
     {
         for ($attempt = 1; $attempt <= 5; $attempt++) {

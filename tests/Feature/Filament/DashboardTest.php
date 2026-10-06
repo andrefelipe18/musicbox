@@ -108,7 +108,7 @@ it('counts new users per day inside the filtered period', function (): void {
 
     $options = chartOptions(UserGrowthChart::class, dashboardFilters('2026-03-09', '2026-03-11'));
 
-    expect($options['xaxis']['categories'])->toBe(['2026-03-09', '2026-03-10', '2026-03-11'])
+    expect($options['xaxis']['categories'])->toBe(['09/03', '10/03', '11/03'])
         ->and($options['series'][0]['data'])->toBe([0, 2, 0]);
 });
 
@@ -116,8 +116,14 @@ it('falls back to the last thirty days before any filter is applied', function (
     $options = chartOptions(UserGrowthChart::class, null);
 
     expect($options['xaxis']['categories'])->toHaveCount(30)
-        ->and($options['xaxis']['categories'][0])->toBe('2026-03-02')
-        ->and($options['xaxis']['categories'][29])->toBe('2026-03-31');
+        ->and($options['xaxis']['categories'][0])->toBe('02/03')
+        ->and($options['xaxis']['categories'][29])->toBe('31/03');
+});
+
+it('shows the year when the selected period crosses calendar years', function (): void {
+    $options = chartOptions(UserGrowthChart::class, dashboardFilters('2025-12-30', '2026-01-02'));
+
+    expect($options['xaxis']['categories'])->toBe(['30/12/2025', '31/12/2025', '01/01/2026', '02/01/2026']);
 });
 
 it('counts ratings and averages them per listened day', function (): void {
@@ -159,7 +165,7 @@ it('summarises the totals of the filtered period', function (): void {
         ->and($stats[1]->getValue())->toBe(2);
 });
 
-it('renders the charts without the section card', function (): void {
+it('renders dashboard charts without the plugin section wrapper', function (): void {
     livewire(UserGrowthChart::class)
         ->assertSee(__('app.dashboard.user_growth'))
         ->assertDontSee('filament-apex-charts-section');
@@ -169,8 +175,16 @@ it('renders the charts without the section card', function (): void {
         ->assertDontSee('filament-apex-charts-section');
 });
 
+it('gives Apex charts the full width of their widget', function (): void {
+    expect(chartOptions(UserGrowthChart::class, null)['chart']['width'])->toBe('100%')
+        ->and(chartOptions(RatingsChart::class, null)['chart']['width'])->toBe('100%');
+});
+
 it('keeps the stats full width and the charts side by side', function (): void {
+    $statsColumns = new ReflectionMethod(PeriodStatsOverview::class, 'getColumns');
+
     expect((new PeriodStatsOverview)->getColumnSpan())->toBe('full')
+        ->and($statsColumns->invoke(new PeriodStatsOverview))->toBe(2)
         ->and((new UserGrowthChart)->getColumnSpan())->toBe(1)
         ->and((new RatingsChart)->getColumnSpan())->toBe(1)
         ->and(livewire(Dashboard::class)->instance()->getColumns())->toBe(2);

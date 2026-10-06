@@ -5,6 +5,7 @@ namespace App\Filament\Widgets;
 use App\Filament\Widgets\Concerns\InteractsWithDashboardDateRange;
 use App\Models\User;
 use App\Models\UserRelease;
+use Filament\Schemas\Components\Component;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,6 +17,8 @@ class PeriodStatsOverview extends StatsOverviewWidget
 {
     use InteractsWithDashboardDateRange;
 
+    protected static bool $isLazy = false;
+
     protected static ?int $sort = 1;
 
     /**
@@ -26,6 +29,17 @@ class PeriodStatsOverview extends StatsOverviewWidget
     protected function getHeading(): ?string
     {
         return __('app.dashboard.period_summary');
+    }
+
+    public function getSectionContentComponent(): Component
+    {
+        return parent::getSectionContentComponent()
+            ->extraAttributes(['class' => 'dashboard-period-stats']);
+    }
+
+    protected function getColumns(): int|array|null
+    {
+        return 2;
     }
 
     public function getStats(): array

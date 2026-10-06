@@ -65,6 +65,7 @@ class RatingsChart extends ApexChart
             'chart' => [
                 'type' => 'line',
                 'height' => 300,
+                'width' => '100%',
                 'toolbar' => ['show' => false],
                 'zoom' => ['enabled' => false],
             ],
@@ -81,7 +82,7 @@ class RatingsChart extends ApexChart
                 ],
             ],
             'xaxis' => [
-                'categories' => array_keys($this->daysInRange()),
+                'categories' => $this->dayLabels(),
                 'labels' => [
                     'style' => [
                         'fontFamily' => 'inherit',

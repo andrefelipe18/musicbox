@@ -54,6 +54,19 @@ trait InteractsWithDashboardDateRange
     }
 
     /**
+     * @return array<int, string>
+     */
+    protected function dayLabels(): array
+    {
+        $showYear = $this->startDate()->year !== $this->endDate()->year;
+
+        return array_map(
+            static fn (CarbonImmutable $day): string => $day->format($showYear ? 'd/m/Y' : 'd/m'),
+            array_values($this->daysInRange()),
+        );
+    }
+
+    /**
      * Constrains a query to the filtered range on the given date column.
      *
      * @param  Builder<covariant Model>  $query

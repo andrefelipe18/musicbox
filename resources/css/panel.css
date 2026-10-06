@@ -5,6 +5,14 @@
 @source '../../app/Filament/**/*';
 @source '../../resources/views/filament/**/*';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+/* o blade do plugin usa utilitarias Tailwind (w-full, justify-center) que o build
+   do painel nao escaneia; sem elas o Apex mede o container errado e trava em 300px */
+@source '../../vendor/leandrocfe/filament-apex-charts/resources/views/**/*.blade.php';
+
+/* Only dashboard stats need internal breathing room; do not alter Sections globally. */
+.dashboard-period-stats .fi-section-content-ctn {
+    padding: calc(var(--spacing) * 4);
+}
 
 @theme {
     /* Surfaces */
