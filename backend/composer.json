@@ -13,7 +13,7 @@
         "laravel/framework": "^13.17",
         "laravel/sanctum": "4.3.3",
         "laravel/tinker": "^3.0",
-        "leandrocfe/filament-apex-charts": "5.1",
+        "leandrocfe/filament-apex-charts": "5.1.4",
         "livewire/blaze": "^1.0",
         "livewire/livewire": "^4.1"
     },
